@@ -61,6 +61,25 @@ function refreshColor() {
 }
 refreshColor();
 
+//смена цветов при наведении=================
+let smallColor = $('.equipment-block__item-equipment-name-color-item');
+
+$(smallColor).hover(function() {
+	let color = $(this).attr('data-color-name');
+	let smallImage = $(this).parent().parent().parent().prev().children('img');
+	$(smallImage).each(function(i,img) {
+		$(img).css('display', 'none');
+		if(color == $(img).attr('data-color-name')) {$(img).css('display', 'inline-block')}
+	});
+});
+
+//кнопка характеристики в маленькой карточке==================
+let eqSmallBtn = $('.equipment-block__item-equipment-description-btn');
+$(eqSmallBtn).click(function(){
+	$(this).toggleClass('active');
+	$(this).parent().parent().next().slideToggle(300);
+});
+
 //tab===================
 $('.tab-block__tab-nav-item').click(function(){
 	if ($(this).hasClass('active')) {return;}
@@ -77,6 +96,6 @@ $('.tab-block__tab-nav-item').click(function(){
 //equipment list===================
 $('.equipment-block__item-drop-btn.list').click(function(){
 
-	$(this).toggleClass('active').next().slideToggle(300);;
+	$(this).toggleClass('active').next().slideToggle(300);
 
 });

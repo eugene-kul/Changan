@@ -176,6 +176,7 @@ body {
 }
 
 .btn {
+	-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;
 	@include anim_cubic2(0.1s,0s);
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 	border: 2px solid transparent;
@@ -246,7 +247,6 @@ body {
 		border-color: var(--colorR);
 		&:hover {
 			background: #fff;
-			border-color: var(--colorR);
 			color: var(--colorR);
 			path {fill: var(--colorR)}
 		}
@@ -270,9 +270,14 @@ body {
 		border-color: var(--colorO);
 		&:hover {
 			background: #fff;
-			border-color: var(--colorO);
 			color: var(--colorO);
 			path {fill: var(--colorO)}
+		}
+	}
+	&.btn-type8 {
+		border-color: var(--colorO);
+		&:hover {
+			color: var(--colorO);
 		}
 	}
 }
@@ -287,6 +292,21 @@ body {
 		font-weight: 700;
 		text-decoration: underline;
 		&:hover {text-decoration: none;}
+	}
+}
+
+.price-old {
+	margin: 0px 5px;
+	position: relative;
+	&:before {
+		content:'';
+		position: absolute;
+		width: 110%;
+		height: 2px;
+		top: calc(50% - 1px);
+		left: -5%;
+		background-color: var(--colorR);
+		transform: skew(0deg, -5deg);
 	}
 }
 //===================================================//
@@ -981,17 +1001,6 @@ body {
 		font-size: 16px;
 		margin: 5px 20px 5px 0px;
 		white-space: nowrap;
-		position: relative;
-			&:before {
-				content:'';
-				position: absolute;
-				width: 110%;
-				height: 2px;
-				top: calc(50% - 1px);
-				left: -5%;
-				background-color: var(--colorR);
-				transform: skew(0deg, -10deg);
-			}
 	}
 	&__name-price-old-icon {
 		cursor: pointer;
@@ -1511,20 +1520,6 @@ body {
 		padding: 10px 15px;
 		flex: 1 1 auto;
 		white-space: nowrap;
-		span {
-			margin: 0px 5px;
-			position: relative;
-			&:before {
-				content:'';
-				position: absolute;
-				width: 110%;
-				height: 2px;
-				top: calc(50% - 1px);
-				left: -5%;
-				background-color: var(--colorR);
-				transform: skew(0deg, -5deg);
-			}
-		}
 	}
 	&__content-price-discount {
 		display: inline-block;
@@ -2310,6 +2305,230 @@ body {
 				width: 4px;
 				top: calc(50% - 7px);
 				right: calc(50% - 2px);
+			}
+		}
+	}
+	&__item-drop-item {
+		//display: none;
+	}
+	&__item-equipment {
+		border: 1px solid #000;
+		@include flexbox();
+		align-items: center;
+		justify-content: space-between;
+		padding: 10px 20px;
+	}
+	&__item-equipment-image {
+		position: relative;
+		flex: 1 1 25%;
+		padding: 0px 10px;
+		
+		img {
+			display: none;
+			padding: 10px 0px 0px 0px;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: 50% 50%;
+			&:first-child {display: inline-block;}
+		}
+	}
+	&__item-equipment-image-label {
+		background-color: #ea3b24;
+		position: absolute;
+		border-radius: 5px;
+		padding: 5px 20px;
+		font-weight: 700;
+		color: #fff;
+		right: 0px;
+		top: 0px;
+	}
+	&__item-equipment-name {
+		@include flexbox();
+		flex-direction: column;
+		justify-content: center;
+		padding: 0px 10px;
+		text-align: left;
+		flex: 1 1 25%;
+	}
+	&__item-equipment-name-title {
+		text-transform: uppercase;
+		padding: 10px 0px;
+		font-weight: 700;
+		font-size: 24px;
+	}
+	&__item-equipment-name-text {
+		color: var(--colorR);
+		padding: 5px 0px;
+		font-weight: 700;
+		opacity: 0.75;
+	}
+	&__item-equipment-name-color {
+		padding: 5px 0px;
+		font-weight: 700;
+		ul {
+			@include flexbox();
+			margin: 5px 0px;
+			height: 20px;
+		}
+	}
+	&__item-equipment-name-color-item {
+		border: 1px solid #0004;
+		border-radius: 5px;
+		margin: 0px 2px;
+		width: 40px;
+	}
+	&__item-equipment-description {
+		flex: 1 1 auto;
+		@include flexbox();
+		align-items: start;
+		flex-direction: column;
+		justify-content: center;
+		text-align: left;
+		padding: 10px;
+	}
+	&__item-equipment-description-list {
+		margin: 0px 0px 10px 0px;
+		font-size: 16px;
+		@include flexbox();
+		flex-wrap: wrap;
+	}
+	&__item-equipment-description-item {
+		flex: 1 1 50%;
+		@include flexbox();
+		align-items: center;
+		font-weight: 700;
+		padding: 5px 0px;
+		svg {
+			margin: 0px 10px 0px 0px;
+		}
+	}
+	&__item-equipment-description-btn {
+		@include flexbox();
+		align-items: center;
+		font-weight: 700;
+		text-decoration: underline;
+		position: relative;
+		padding: 0px 15px 0px 0px;
+		width: auto;
+		cursor: pointer;
+		&:after {
+			content:'';
+			@include anim_cubic2(0.1s,0s);
+			position: absolute;
+			width: 0;
+			height: 0;
+			top: calc(50% - 3px);
+			right: 0px;
+			border: 5px solid transparent;
+			border-top: 8px solid var(--colorR);
+		}
+		span {
+			@include anim_cubic2(0.1s,0s);
+			position: relative;
+			margin: 0px 15px 0px 0px;
+			display: inline-block;
+			width: 20px;
+			height: 2px;
+			background-color: var(--colorR);
+			&:before, &:after {
+				content:'';
+				@include anim_cubic2(0.1s,0s);
+				position: absolute;
+				width: 120%;
+				height: 100%;
+				left: 0px;
+				background-color: var(--colorR);
+			}
+			&:before {
+				top: -5px;
+			}
+			&:after {
+				top: 5px;
+			}
+		}
+		&.active {
+			&:after {
+				border-top: 0;
+				border-bottom: 8px solid var(--colorR);
+			}
+			span {
+				background-color: #333;
+				&:before, &:after {background-color: #333;}
+			}
+		}
+	}
+	&__item-equipment-btn-block {
+		flex: 1 1 30%;
+		padding: 10px;
+		@include flexbox();
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__item-equipment-btn-block-price {
+		@include flexbox();
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		margin: 0px 0px 10px 0px;
+	}
+	&__item-equipment-btn-block-price-column {
+		flex: 0 1 49%;
+		a {
+			width: 100%;
+			padding: 0px 10px;
+		}
+	}
+	&__item-equipment-btn-block-price-row {
+		.discont {
+			display: inline-block;
+			color: #c46973;
+			font-size: 14px;
+		}
+		.old {
+			color: #0008;
+			font-weight: 700;
+			font-size: 14px;
+			display: inline-block;
+		}
+		font-weight: 700;
+		font-size: 18px;
+		width: 100%;
+		text-align: right;
+		white-space: nowrap;
+		line-height: 110%;
+	}
+	&__item-equipment-btn-block-btn {
+		@include flexbox();
+		width: 100%;
+		justify-content: space-between;
+		a {
+			padding: 0px 10px;
+			flex: 0 1 49%;
+		}
+	}
+	&__item-all-equipment {
+		padding: 10px;
+		display: none;
+	}
+	&__item-all-equipment-body {
+		@include flexbox();
+		flex-wrap: wrap;
+	}
+	&__item-all-equipment-item {
+		flex: 1 1 50%;
+		text-align: left;
+		padding: 0px 10px;
+		margin: 0px 0px 10px 0px;
+		ul {
+			li {
+				margin: 0px 0px 10px 0px;
+				&:before {
+					content:'•';
+					font-weight: 700;
+					margin: 0px 5px 0px 0px;
+				}
 			}
 		}
 	}
