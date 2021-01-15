@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<title>page2</title>
+	<meta name="description" content="">
+	<link rel="stylesheet" href="../css/style.css">
+	<!-- @import "../kit/head.kit" -->
+</head>
+
+<body>
+	<div class="wrapper container">
+		<!-- @import "../kit/header.kit" -->
+		<nav aria-label="breadcrumb">
+			<ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+				<li itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem' >
+					<a href="../" title='Главная' itemprop='item'><span itemprop='name'>Главная</span></a>
+					<meta itemprop='position' content='1'>
+				</li>
+				<li itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem' aria-current="page">
+					<a href="#!" title='акции' itemprop='item'><span itemprop='name'>Акции</span></a>
+					<meta itemprop='position' content='2'>
+				</li>
+				<li itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem' aria-current="page" class="active">
+					<meta itemprop='item' content='url автокредит'>
+					<span itemprop='name'>Автокредит</span>
+					<meta itemprop='position' content='3'>
+				</li>
+			</ul>
+		</nav>
+		<main>
+			<section class="credit-block">
+				<ul class="credit-block__step-list">
+					<li class="credit-block__step-item"><span>1</span> Выберите автомобиль</li>
+					<li class="credit-block__step-item"><span>2</span> Заполните заявку</li>
+					<li class="credit-block__step-item"><span>3</span> Дождитесь звонка</li>
+					<li class="credit-block__step-item"><span>4</span> Приезжайте за авто</li>
+					<li class="credit-block__step-item"><span>!!</span> Документы: паспорт, второй документ, удостоверяющий личность</li>
+				</ul>
+				<div class="credit-block__body">
+					<div class="credit-block__column">
+						<div class="credit-block__column-title">Выгодные условия автокредита</div>
+						<div class="credit-block__image-block">
+							<ul class="credit-block__image-block-list">
+								<li class="credit-block__image-block-list-item">
+									<span class="credit-block__image-block-list-item-title">от 0 рублей</span>
+									<span class="credit-block__image-block-list-item-value">первоначальный взнос</span>
+								</li>
+								<li class="credit-block__image-block-list-item">
+									<span class="credit-block__image-block-list-item-title">98%</span>
+									<span class="credit-block__image-block-list-item-value">одобрение по кредиту</span>
+								</li>
+								<li class="credit-block__image-block-list-item">
+									<span class="credit-block__image-block-list-item-title">от 0,1%</span>
+									<span class="credit-block__image-block-list-item-value">процент годовых по кредиту</span>
+								</li>
+							</ul>
+							<div class="credit-block__image-block-image">
+								<div class="credit-block__image-block-label">
+									<span class="credit-block__image-block-label-icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28.274px" height="28.273px" viewBox="0 0 28.274 28.273" style="enable-background:new 0 0 28.274 28.273;" xml:space="preserve"><path d="M21.295,2.601h2.636V0h-2.636h-1.225H8.149H6.924H4.342v2.601h1.53h1.052v7.674l5.817,3.876l-6.079,3.77l0.027,0.044l-0.014,0.008v7.7H5.872h-1.53v2.601h19.589v-2.601h-2.885v-7.69l-5.896-3.823l6.156-3.817l-0.027-0.044l0.016-0.009V2.601z M19.821,18.871v6.802H7.901v-7.018l6.008-3.725L19.821,18.871z M20.071,9.607l-6.103,3.785L8.149,9.615V2.601h11.921V9.607z"/><polygon points="19.342,9.004 19.342,6.122 8.884,6.122 8.884,8.991 13.961,12.346 "/><polygon points="11.455,23.605 8.578,23.992 8.578,25.093 19.178,25.093 19.178,23.992 16.558,23.673 13.879,22.621 "/></svg></span>
+									<span class="credit-block__image-block-label-text">кредит <strong>за 15 минут</strong></span></div>
+								<img src="/images/colors/1/red.png" alt="">
+							</div>
+						</div>
+						<div class="credit-block__image-block-text md4-dn">Покупка автомобиля - значимое событие в жизни каждого человека.</div>
+					</div>
+					<div class="credit-block__column">
+						<form action="#!" name="Автокредит" class="credit-block__form">
+							<div class="credit-block__form-title">Оставьте заявку на покупку автомобиля в кредит</div>
+							<div class="credit-block__form-input">
+								<div class="credit-block__form-input-item fb100">
+									<select class="credit-block__form-input-select-model" name="Модель">
+										<option value="0">Выберите модель</option>
+										<option value="#1">#1</option>
+										<option value="#2">#2</option>
+										<option value="#3">#3</option>
+									</select>
+								</div>
+								<div class="credit-block__form-input-item fb50"><input class="credit-block__form-input-name" name="Имя" type="text" placeholder="Ваше имя"></div>
+								<div class="credit-block__form-input-item fb50"><input class="credit-block__form-input-phone" name="Телефон" type="tel" placeholder="+7 (___) ___ __ __"></div>
+								<div class="credit-block__form-input-item fb50"><input class="credit-block__form-input-money" name="Первоначальный взнос" type="number" placeholder="Первоначальный взнос"></div>
+								<div class="credit-block__form-input-item fb50">
+									<select class="credit-block__form-input-select-years" name="Срок кредитования">
+										<option value="0">Срок кредитования</option>
+										<option value="#1">#1</option>
+										<option value="#2">#2</option>
+										<option value="#3">#3</option>
+									</select>
+								</div>
+								<button class="credit-block__form-btn btn btn-type6" type="submit">Отправить заявку</button>
+							</div>
+						</form>
+						<span class="form-agree m-b-2">Нажимая на кнопку, я даю свое <a href="#!">согласие на обработку персональных данных</a></span>
+					</div>
+				</div>
+				<ul class="credit-block__check-list">
+					<li class="credit-block__check-list-item"><span class="icon"></span><strong>Требования к заявителю: </strong><span class="text">документы для оформления кредита</span></li>
+					<li class="credit-block__check-list-item"><span class="icon"></span><strong>Общий трудовой стаж: </strong><span class="text">не менее 1 года</span></li>
+					<li class="credit-block__check-list-item"><span class="icon"></span><strong>Возраст: </strong><span class="text">от 21 года на момент выдачи кредита, до 65 лет на момент погашения кредита</span></li>
+				</ul>
+			</section>
+		</main>
+	</div>
+	<!-- @import "../kit/footer.kit" -->
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+	<script src="../js/main.js"></script>
+</body>
+</html>

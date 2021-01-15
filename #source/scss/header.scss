@@ -127,7 +127,7 @@
 		align-items: center;
 		padding: 0px 10px;
 		svg {
-			path {fill: var(--colorR2)}
+			path {fill: var(--colorR)}
 		}
 	}
 }
@@ -171,7 +171,7 @@
 				&:nth-child(3) {top: 50%;@include rotate(-45deg);}
 			}
 		}
-		&:hover{span {background-color: var(--colorR1);}}
+		&:hover{span {background-color: var(--colorR);}}
 		@media (max-width:$md3+px) {display: inline-block;}
 	}
 	&__phone {
@@ -187,7 +187,7 @@
 			width: 18px;
 			height: 18px;
 			margin-right: 7px;
-			path {fill: var(--colorR2)}
+			path {fill: var(--colorR)}
 		}
 	}
 	&__list {
